@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Thumbnail Width Controller",
+  "version": "1.0",
+  "description": "Change the width of YouTube thumbnails with a slider.",
+  "icons": {
+    "16": "slider-icon16.png",
+    "32": "slider-icon32.png",
+    "48": "slider-icon48.png",
+    "64": "slider-icon64.png",
+    "128": "slider-icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Set YouTube Thumbnail Width"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "*://www.youtube.com/*"
+  ]
+}
